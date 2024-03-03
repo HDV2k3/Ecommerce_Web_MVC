@@ -6,15 +6,15 @@ using WebBanHang.ViewModels;
 
 namespace WebBanHang.Controllers
 {
-    public class CartController : Controller
-    {
-        private readonly Vshop2024Context db;
+	public class CartController : Controller
+	{
+		private readonly Vshop2024Context db;
 
-        public CartController(Vshop2024Context context) 
-        {
-        db=context;
-        }
-		
+		public CartController(Vshop2024Context context)
+		{
+			db = context;
+		}
+
 		public List<CartItem> Cart => HttpContext.Session.Get<List<CartItem>>(MySetting.CART_KEY) ?? new List<CartItem>();
 
 		public IActionResult Index()
@@ -57,14 +57,14 @@ namespace WebBanHang.Controllers
 		public IActionResult RemoveCart(int id)
 		{
 			var gioHang = Cart;
-			var item = gioHang.SingleOrDefault(p=>p.MaHH == id);
-            if (item!=null)
-            {
-                gioHang.Remove(item);
-                HttpContext.Session.Set(MySetting.CART_KEY, gioHang);
-            }
-            return RedirectToAction("Index");
-        }
+			var item = gioHang.SingleOrDefault(p => p.MaHH == id);
+			if (item != null)
+			{
+				gioHang.Remove(item);
+				HttpContext.Session.Set(MySetting.CART_KEY, gioHang);
+			}
+			return RedirectToAction("Index");
+		}
 
 	}
 }

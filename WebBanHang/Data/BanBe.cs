@@ -7,7 +7,7 @@ public partial class BanBe
 {
     public int MaBb { get; set; }
 
-    public string? MaKh { get; set; }
+    public string MaKh { get; set; } = null!;
 
     public int MaHh { get; set; }
 
@@ -21,5 +21,5 @@ public partial class BanBe
 
     public virtual HangHoa MaHhNavigation { get; set; } = null!;
 
-    public virtual KhachHang? MaKhNavigation { get; set; }
+    public virtual KhachHang MaKhNavigation { get; set; } = null!;
 }

@@ -14,9 +14,9 @@ namespace WebBanHang.ViewComponents
         {
             var data = db.Loais.Select(loai => new MenuLoaiVM
             {
-            MaLoai  =   loai.MaLoai,
-            TenLoai =    loai.TenLoai,
-            SoLuong =   loai.HangHoas.Count
+                MaLoai = loai.MaLoai,
+                TenLoai = loai.TenLoai,
+                SoLuong = loai.HangHoas.Count
             }).OrderBy(p => p.TenLoai);
             return View(data); //Default.cshtml
         }
