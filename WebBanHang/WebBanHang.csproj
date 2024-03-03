@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
@@ -7,6 +7,18 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Include="NewFolder\404.html" />
+    <Content Include="NewFolder\cart.html" />
+    <Content Include="NewFolder\chackout.html" />
+    <Content Include="NewFolder\contact.html" />
+    <Content Include="NewFolder\index.html" />
+    <Content Include="NewFolder\shop-detail.html" />
+    <Content Include="NewFolder\shop.html" />
+    <Content Include="NewFolder\testimonial.html" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Areas\Admin\Data\" />
     <Folder Include="Data\" />
   </ItemGroup>
 

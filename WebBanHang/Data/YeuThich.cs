@@ -9,7 +9,7 @@ public partial class YeuThich
 
     public int? MaHh { get; set; }
 
-    public string? MaKh { get; set; }
+    public string MaKh { get; set; } = null!;
 
     public DateTime? NgayChon { get; set; }
 
@@ -17,5 +17,5 @@ public partial class YeuThich
 
     public virtual HangHoa? MaHhNavigation { get; set; }
 
-    public virtual KhachHang? MaKhNavigation { get; set; }
+    public virtual KhachHang MaKhNavigation { get; set; } = null!;
 }

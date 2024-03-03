@@ -1,4 +1,3 @@
-D:\Web\WebBanHang\WebBanHang\bin\Debug\net8.0\appsettings.Development.json
 D:\Web\WebBanHang\WebBanHang\bin\Debug\net8.0\appsettings.json
 D:\Web\WebBanHang\WebBanHang\bin\Debug\net8.0\WebBanHang.staticwebassets.runtime.json
 D:\Web\WebBanHang\WebBanHang\bin\Debug\net8.0\WebBanHang.exe

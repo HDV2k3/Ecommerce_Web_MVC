@@ -52,8 +52,7 @@ public partial class Vshop2024Context : DbContext
     public virtual DbSet<YeuThich> YeuThiches { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see https://go.microsoft.com/fwlink/?LinkId=723263.
-        => optionsBuilder.UseSqlServer("Data Source=LAPTOP-S31L0IIU;Initial Catalog=VShop2024;Integrated Security=True;Trust Server Certificate=True");
+        => optionsBuilder.UseSqlServer("Data Source=LAPTOP-S31L0IIU;Initial Catalog=VShop2024;Integrated Security=True;Encrypt=True;Trust Server Certificate=True");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -68,7 +67,7 @@ public partial class Vshop2024Context : DbContext
             entity.Property(e => e.HoTen).HasMaxLength(50);
             entity.Property(e => e.MaHh).HasColumnName("MaHH");
             entity.Property(e => e.MaKh)
-                .HasMaxLength(20)
+                .HasMaxLength(100)
                 .HasColumnName("MaKH");
             entity.Property(e => e.NgayGui)
                 .HasDefaultValueSql("(getdate())")
@@ -80,6 +79,7 @@ public partial class Vshop2024Context : DbContext
 
             entity.HasOne(d => d.MaKhNavigation).WithMany(p => p.BanBes)
                 .HasForeignKey(d => d.MaKh)
+                .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK_BanBe_KhachHang");
         });
 
@@ -192,7 +192,7 @@ public partial class Vshop2024Context : DbContext
             entity.Property(e => e.GhiChu).HasMaxLength(50);
             entity.Property(e => e.HoTen).HasMaxLength(50);
             entity.Property(e => e.MaKh)
-                .HasMaxLength(20)
+                .HasMaxLength(100)
                 .HasColumnName("MaKH");
             entity.Property(e => e.MaNv)
                 .HasMaxLength(50)
@@ -209,6 +209,7 @@ public partial class Vshop2024Context : DbContext
 
             entity.HasOne(d => d.MaKhNavigation).WithMany(p => p.HoaDons)
                 .HasForeignKey(d => d.MaKh)
+                .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK_Orders_Customers");
 
             entity.HasOne(d => d.MaNvNavigation).WithMany(p => p.HoaDons)
@@ -250,7 +251,7 @@ public partial class Vshop2024Context : DbContext
             entity.ToTable("KhachHang");
 
             entity.Property(e => e.MaKh)
-                .HasMaxLength(20)
+                .HasMaxLength(100)
                 .HasColumnName("MaKH");
             entity.Property(e => e.DiaChi).HasMaxLength(60);
             entity.Property(e => e.DienThoai).HasMaxLength(24);
@@ -421,7 +422,7 @@ public partial class Vshop2024Context : DbContext
             entity.Property(e => e.MaYt).HasColumnName("MaYT");
             entity.Property(e => e.MaHh).HasColumnName("MaHH");
             entity.Property(e => e.MaKh)
-                .HasMaxLength(20)
+                .HasMaxLength(100)
                 .HasColumnName("MaKH");
             entity.Property(e => e.MoTa).HasMaxLength(255);
             entity.Property(e => e.NgayChon).HasColumnType("datetime");
@@ -433,7 +434,7 @@ public partial class Vshop2024Context : DbContext
 
             entity.HasOne(d => d.MaKhNavigation).WithMany(p => p.YeuThiches)
                 .HasForeignKey(d => d.MaKh)
-                .OnDelete(DeleteBehavior.Cascade)
+                .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK_Favorites_Customers");
         });
 

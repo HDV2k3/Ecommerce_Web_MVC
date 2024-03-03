@@ -17,7 +17,7 @@ namespace WebBanHang.Helpers
 
         public static string ToSHA512Hash(this string password, string? saltKey)
         {
-            SHA512Managed sha512 = new SHA512Managed();
+			SHA512Managed sha512 = new SHA512Managed();
             byte[] encryptedSHA512 = sha512.ComputeHash(Encoding.UTF8.GetBytes(string.Concat(password, saltKey)));
             sha512.Clear();
 

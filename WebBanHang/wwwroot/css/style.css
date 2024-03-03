@@ -111,9 +111,9 @@
     transition: 0.5s;
 }
 
-.topbar .top-link a small:hover i {
-    color: var(--bs-primary) !important;
-}
+    .topbar .top-link a small:hover i {
+        color: var(--bs-secondary) !important;
+    }
 /*** Topbar End ***/
 
 /*** Navbar Start ***/
@@ -178,12 +178,13 @@
 
 /*** Hero Header ***/
 .hero-header {
-    background: linear-gradient(rgba(248, 223, 173, 0.1), rgba(248, 223, 173, 0.1)), url(../img/hero-img.jpg);
+    background: linear-gradient(rgba(248, 223, 173, 0.1), rgba(248, 223, 173, 0.1));
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
 }
 
+.
 .carousel-item {
     position: relative;
 }
@@ -219,7 +220,7 @@
 
 .page-header {
     position: relative;
-    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../img/cart-page-header-img.jpg);
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../img/banertech.png);
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
